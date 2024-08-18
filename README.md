@@ -4,15 +4,15 @@ This full-stack application allows users to input multiple URLs and fetch metada
 
 ## Setup
 
-1. Clone the repository:
+1. Clone the repository:  
 `git clone https://github.com/LightDDark/Tolstoy`
 
-2. Set up the backend:
-`cd url-metadata-server`
+2. Set up the backend:  
+`cd url-metadata-server`  
 `npm install`
 
-3. Set up the frontend:
-`cd ../url-metadata-fetcher`
+3. Set up the frontend:   
+`cd ../url-metadata-fetcher`  
 `npm install`
 
 ## Running the Application
@@ -23,24 +23,24 @@ This full-stack application allows users to input multiple URLs and fetch metada
 
 ### Manually
 
-1. Start the backend server:
-`cd url-metadata-server`
+1. Start the backend server:  
+`cd url-metadata-server`  
 `npm start`
 
-3. In a new terminal, start the frontend:
-`cd url-metadata-fetcher`
+3. In a new terminal, start the frontend:  
+`cd url-metadata-fetcher`  
 `npm start`
 
 5. Open your browser and navigate to `http://localhost:3000`
 
 ## Running Tests
 
-1. For backend tests:
-`cd url-metadata-server`
+1. For backend tests:  
+`cd url-metadata-server`  
 `npm test`
 
-3. For frontend tests:
-`cd url-metadata-fetcher`
+3. For frontend tests:  
+`cd url-metadata-fetcher`  
 `npm test`
 
 ## Design Choices and Trade-offs
