@@ -1,4 +1,3 @@
-// server.js
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
@@ -64,7 +63,7 @@ app.post('/fetch-metadata', async (req, res) => {
   }
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
 
