@@ -22,6 +22,12 @@ describe('POST /fetch-metadata', () => {
     expect(response.body[0]).toHaveProperty('title')
     expect(response.body[0]).toHaveProperty('description')
     expect(response.body[0]).toHaveProperty('image')
+    expect(response.body[1]).toHaveProperty('title')
+    expect(response.body[1]).toHaveProperty('description')
+    expect(response.body[1]).toHaveProperty('image')
+    expect(response.body[2]).toHaveProperty('title')
+    expect(response.body[2]).toHaveProperty('description')
+    expect(response.body[2]).toHaveProperty('image')
   })
 
   afterAll((done) => {
