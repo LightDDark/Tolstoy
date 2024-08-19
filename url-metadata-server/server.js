@@ -1,5 +1,6 @@
 const express = require('express')
 const axios = require('axios')
+const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 const cors = require('cors')
 const helmet = require('helmet')
@@ -30,15 +31,26 @@ app.use((req, res, next) => {
 
 async function fetchMetadata(url) {
   try {
-    const response = await axios.get(url)
-    const $ = cheerio.load(response.data)
+    if (url.endsWith('/')) {
+      url = url.slice(0, -1)
+    }
+    // const response = await axios.get(url)
+    const response = await fetch(url)
+    const data = await response.text()
+    const $ = cheerio.load(data)
 
     const title = $('title').text() || $('meta[property="og:title"]').attr('content') || ''
     const description =
       $('meta[name="description"]').attr('content') ||
       $('meta[property="og:description"]').attr('content') ||
       ''
-    const image = $('meta[property="og:image"]').attr('content') || ''
+    let image =
+      $('meta[property="og:image"]').attr('content') ||
+      $('meta[itemprop="image"]').attr('content') ||
+      ''
+    if (image.startsWith('/')) {
+      image = url + image
+    }
 
     return { title, description, image }
   } catch (error) {
